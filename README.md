@@ -1,55 +1,58 @@
 Bone Fracture Detection Using CNN (ResNet-50)
-📌 Overview
+Overview
 
-Bone fracture diagnosis using radiographic (X-ray) images is a critical task in medical imaging. This project presents an automated bone fracture detection system using deep learning, specifically a Convolutional Neural Network (CNN) based on ResNet-50.
+Bone fracture detection from X-ray images is a critical task in medical diagnosis. Manual examination can be time-consuming and prone to error.
+This project implements an automated bone fracture detection system using Convolutional Neural Networks (CNN) with a ResNet-50 architecture to classify X-ray images as Fractured or Normal.
 
-The model classifies X-ray images into fractured and non-fractured categories, assisting radiologists by improving diagnostic accuracy and reducing manual effort.
+The system also provides a Graphical User Interface (GUI) that allows users to upload an X-ray image and receive real-time predictions.
 
-🧠 Model Architecture – ResNet-50
+Key Features
 
-Pretrained ResNet-50 model
+CNN-based bone fracture classification
 
-Transfer learning using ImageNet weights
+Transfer learning using pretrained ResNet-50
 
-Custom fully connected layers added for binary classification
+Binary classification: Fracture vs Normal
 
-Residual connections help prevent vanishing gradients
+Image preprocessing and normalization
 
-📂 Dataset
+Simple and user-friendly GUI application
 
-This project uses publicly available musculoskeletal X-ray images.
+Suitable for academic and research purposes
 
-Key features:
+Dataset
 
-Grayscale X-ray images
+X-ray images of human bones
 
-Binary classes: Fracture and Normal
+Two classes:
+
+Fracture
+
+Normal
 
 Images resized to 224 × 224
 
-Data augmentation applied to improve generalization
+Dataset split into training and testing sets
 
-Example sources:
+Data augmentation applied to improve model generalization
 
-MURA Dataset
+Publicly available datasets (e.g., Kaggle or MURA-style datasets) can be used.
 
-Kaggle bone fracture datasets
+Model Architecture
 
-⚙️ Project Workflow
+Base model: ResNet-50
 
-Data Loading & Preprocessing
+Pretrained on ImageNet
 
-Image Augmentation
+Custom fully connected layers added
 
-Model Building (ResNet-50)
+Sigmoid activation for binary classification
 
-Training & Validation
+Optimizer: Adam
 
-Model Evaluation
+Loss function: Binary Cross-Entropy
 
-Prediction on New X-ray Images
-
-🧪 Technologies Used
+Technologies Used
 
 Python 3.x
 
@@ -59,16 +62,93 @@ NumPy
 
 OpenCV
 
+Pillow
+
+Tkinter (GUI)
+
 Matplotlib
 
 Scikit-learn
 
-🚀 Installation & Setup
-# Clone the repository
-git clone https://github.com/your-username/bone-fracture-detection.git
+Project Workflow
 
-# Navigate to the project directory
+Load and preprocess X-ray images
+
+Resize and normalize input data
+
+Apply data augmentation
+
+Train ResNet-50 model
+
+Evaluate model performance
+
+Save trained model
+
+Perform prediction using GUI
+
+Installation
+Clone the Repository
+git clone https://github.com/your-username/bone-fracture-detection.git
 cd bone-fracture-detection
 
-# Install dependencies
+Install Dependencies
 pip install -r requirements.txt
+
+
+⚠️ Recommended Python version: Python 3.8 – 3.10
+(Newer versions may cause compatibility issues with some libraries)
+
+Running the Application (GUI)
+
+After installing the dependencies, run the GUI application using:
+
+python mainGUI.py
+
+Using the GUI
+
+Launch the application
+
+Click Upload Image to select an X-ray image
+
+The image is automatically preprocessed
+
+Click Predict / Detect Fracture
+
+The result is displayed as:
+
+Fracture
+
+Normal
+
+Prediction confidence may also be shown (if enabled)
+
+Model Performance
+
+Typical performance metrics:
+
+Accuracy: ~90% (varies with dataset)
+
+Precision: High
+
+Recall: High
+
+F1-Score: Balanced
+
+Performance depends on dataset quality, size, and training configuration.
+
+Folder Structure
+bone-fracture-detection/
+│
+├── dataset/
+│   ├── train/
+│   ├── test/
+│
+├── models/
+│   └── resnet50_model.h5
+│
+├── train.py
+├── test.py
+├── predict.py
+├── mainGUI.py
+├── requirements.txt
+└── README.md
