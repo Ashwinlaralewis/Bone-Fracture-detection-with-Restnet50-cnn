@@ -1,147 +1,138 @@
-Bone Fracture Detection Using CNN (ResNet-50)
-Overview
+🦴 Bone Fracture Detection Using CNN (ResNet-50)
 
-Bone fracture detection from X-ray images is a critical task in medical diagnosis. Manual examination can be time-consuming and prone to error.
-This project implements an automated bone fracture detection system using Convolutional Neural Networks (CNN) with a ResNet-50 architecture to classify X-ray images as Fractured or Normal.
+An AI-powered system for detecting bone fractures from X-ray images using Deep Learning and a user-friendly GUI.
 
-The system also provides a Graphical User Interface (GUI) that allows users to upload an X-ray image and receive real-time predictions.
+✨ Highlights
 
-Key Features
+✅ Deep Learning–based fracture detection
 
-CNN-based bone fracture classification
+✅ Transfer Learning with ResNet-50
 
-Transfer learning using pretrained ResNet-50
+✅ Binary Classification: Fracture / Normal
 
-Binary classification: Fracture vs Normal
+✅ Interactive GUI application
 
-Image preprocessing and normalization
+✅ Academic & research-ready
 
-Simple and user-friendly GUI application
+📌 Project Overview
 
-Suitable for academic and research purposes
+Bone fracture detection from radiographic images is a crucial yet time-consuming task for medical professionals.
+This project automates the detection process using a Convolutional Neural Network (CNN) built on ResNet-50, enabling fast and accurate classification of X-ray images.
 
-Dataset
+A desktop GUI is included, allowing users to upload X-ray images and receive predictions instantly.
 
-X-ray images of human bones
+🧠 Model Details
 
-Two classes:
+Architecture: ResNet-50
 
-Fracture
+Learning Type: Transfer Learning
 
-Normal
+Pretrained On: ImageNet
 
-Images resized to 224 × 224
+Task: Binary Classification
 
-Dataset split into training and testing sets
+Output: Fracture / Normal
 
-Data augmentation applied to improve model generalization
-
-Publicly available datasets (e.g., Kaggle or MURA-style datasets) can be used.
-
-Model Architecture
-
-Base model: ResNet-50
-
-Pretrained on ImageNet
-
-Custom fully connected layers added
-
-Sigmoid activation for binary classification
+Loss Function: Binary Cross-Entropy
 
 Optimizer: Adam
 
-Loss function: Binary Cross-Entropy
+📂 Dataset Information
 
-Technologies Used
+X-ray images of human bones
 
-Python 3.x
+Two categories:
 
-TensorFlow / Keras
+🟥 Fracture
 
-NumPy
+🟩 Normal
 
-OpenCV
+Image size: 224 × 224
 
-Pillow
+Dataset split:
 
-Tkinter (GUI)
+Training set
 
-Matplotlib
+Testing set
 
-Scikit-learn
+Data augmentation applied to reduce overfitting
 
-Project Workflow
+Public datasets such as Kaggle or MURA-style datasets can be used.
 
-Load and preprocess X-ray images
+⚙️ Tech Stack
+Category	Tools
+Language	Python
+Deep Learning	TensorFlow, Keras
+Image Processing	OpenCV, Pillow
+GUI	Tkinter
+Visualization	Matplotlib
+Utilities	NumPy, Scikit-learn
+🔁 Workflow
 
-Resize and normalize input data
+Load X-ray images
+
+Preprocess & normalize images
 
 Apply data augmentation
 
 Train ResNet-50 model
 
-Evaluate model performance
+Evaluate performance
 
 Save trained model
 
-Perform prediction using GUI
+Predict using GUI
 
-Installation
-Clone the Repository
+🚀 Installation
+1️⃣ Clone the Repository
 git clone https://github.com/your-username/bone-fracture-detection.git
 cd bone-fracture-detection
 
-Install Dependencies
+2️⃣ Install Dependencies
 pip install -r requirements.txt
 
 
-⚠️ Recommended Python version: Python 3.8 – 3.10
-(Newer versions may cause compatibility issues with some libraries)
+🔔 Recommended Python version: 3.8 – 3.10
 
-Running the Application (GUI)
+▶️ Run the Application (GUI)
 
-After installing the dependencies, run the GUI application using:
+After installing the dependencies, start the GUI:
 
 python mainGUI.py
 
-Using the GUI
+🖥️ How to Use the GUI
 
 Launch the application
 
-Click Upload Image to select an X-ray image
+Click Upload Image
 
-The image is automatically preprocessed
+Select an X-ray image
 
 Click Predict / Detect Fracture
 
-The result is displayed as:
+View the result:
 
-Fracture
+✔️ Fracture
 
-Normal
+❌ Normal
 
-Prediction confidence may also be shown (if enabled)
+(Optional) Prediction confidence displayed
 
-Model Performance
+📊 Model Performance
+Metric	Result
+Accuracy	~90%
+Precision	High
+Recall	High
+F1-Score	Balanced
 
-Typical performance metrics:
+Results vary based on dataset size and quality.
 
-Accuracy: ~90% (varies with dataset)
-
-Precision: High
-
-Recall: High
-
-F1-Score: Balanced
-
-Performance depends on dataset quality, size, and training configuration.
-
-Folder Structure
+📁 Project Structure
 bone-fracture-detection/
 │
 ├── dataset/
 │   ├── train/
-│   ├── test/
+│   └── test/
 │
 ├── models/
 │   └── resnet50_model.h5
@@ -152,3 +143,13 @@ bone-fracture-detection/
 ├── mainGUI.py
 ├── requirements.txt
 └── README.md
+
+🔮 Future Improvements
+
+Multi-class fracture classification
+
+Fracture localization using Grad-CAM
+
+Web or mobile application deployment
+
+Integration with hospital imaging systems
